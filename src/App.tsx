@@ -40,13 +40,12 @@ function App() {
       turnCheck = newSquare;
     };
 
-    setTurn(!turn);
-
     const winCheck = winCondition.find(rule => (
       rule.filter(number => turnCheck && turnCheck.find(pos => pos === number))?.length === 3
     ));
 
     if(winCheck) setWin(winCheck);
+    else setTurn(!turn);
   }
   function handleReset() {
     setCircle([]);
