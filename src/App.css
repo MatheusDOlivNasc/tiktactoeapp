@@ -1,0 +1,113 @@
+.border {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+}
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+  width: 100%;
+
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+.pos-number {
+  position: relative;
+  height: 100%;
+  width: 33%;
+  flex: 1;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  font-size: 3rem;
+  font-weight: 500;
+}
+.pos-number.winner {
+  background-color: black;
+  color: rgb(0, 221, 0);
+}
+.pos-number.winner::after {
+  color: white;
+}
+.pos-number:not(:disabled):hover {
+  background-color: rgb(190, 190, 190);
+}
+.pos-number:disabled {
+  cursor: default;
+}
+.pos-number::after {
+  content: attr(data-number);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.win-marker {
+  position: absolute;
+  list-style: none;
+  height: 10px;
+  width: 400px;
+  background-color: transparent;
+}
+.win-marker.zero {
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -16%);
+  background-color: red;
+}
+.win-marker.one {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+}
+.win-marker.two {
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -16%);
+  background-color: red;
+}
+.win-marker.three {
+  top: 50%;
+  left: 60%;
+  transform: translate(-82%, -50%) rotate(90deg);
+  background-color: red;
+}
+.win-marker.four {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  background-color: red;
+}
+.win-marker.five {
+  top: 50%;
+  left: 17%;
+  transform: translate(-0%, -50%) rotate(90deg);
+  background-color: red;
+}
+.win-marker.six {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: red;
+}
+.win-marker.seven {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(135deg);
+  background-color: red;
+}
