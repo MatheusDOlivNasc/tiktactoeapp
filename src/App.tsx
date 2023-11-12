@@ -20,7 +20,7 @@ const winMap = ["zero", "one", "two", "three", "four", "five", "six", "seven"];
 
 function App() {
   const [circle, setCircle] = useState<number[]>([]);
-  const [square, setSquare] = useState<number[]>([]);
+  const [x, setX] = useState<number[]>([]);
   const [turn, setTurn] = useState<boolean>(false);
   const [win, setWin] = useState<number[] | undefined>(undefined);
 
@@ -35,9 +35,9 @@ function App() {
       setCircle(newCircle);
       turnCheck = newCircle;
     } else {
-      const newSquare = [...square, number];
-      setSquare(newSquare);
-      turnCheck = newSquare;
+      const newX = [...x, number];
+      setX(newX);
+      turnCheck = newX;
     };
 
     const winCheck = winCondition.find(rule => (
@@ -49,7 +49,7 @@ function App() {
   }
   function handleReset() {
     setCircle([]);
-    setSquare([]);
+    setX([]);
     setTurn(false);
     setWin(undefined);
   }
@@ -72,14 +72,14 @@ function App() {
                     }
                     disabled={
                       circle.find(n => n == pos) != undefined ||
-                      square.find(n => n == pos) != undefined ||
+                      x.find(n => n == pos) != undefined ||
                       !!win
                     }
                     data-number={pos}
                     onClick={handleSetRound}>
                       {
                         circle.find(n => n == pos) ? "O" :
-                        square.find(n => n == pos) ? "X" :
+                        x.find(n => n == pos) ? "X" :
                         null
                       }
                   </button>
